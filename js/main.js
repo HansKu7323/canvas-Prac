@@ -8,12 +8,24 @@
     }
     const ctx = canvas.getContext('2d');
 
-    ctx.shadowOffsetX = 4;
-    ctx.shadowOffsetY = 4;
-    ctx.shadowBlur = 4;
-    ctx.shadowColor = 'rgba(0, 0, 0, 0.3)'
+    ctx.beginPath();
+    ctx.moveTo(100, 50);
+    ctx.lineTo(300, 50);
+    ctx.setLineDash([5,10])
+    ctx.stroke();
 
-    ctx.fillRect(50, 50, 50, 50);
+    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.lineTo(300, 100);
+    ctx.setLineDash([])
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(100, 150);
+    ctx.lineTo(300, 150);
+    ctx.lineWidth = 16
+    ctx.lineCap = 'round'
+    ctx.stroke();
 
   }
 
