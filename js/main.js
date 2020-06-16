@@ -8,25 +8,18 @@
     }
     const ctx = canvas.getContext('2d');
 
-    ctx.beginPath();
-    ctx.moveTo(100, 50);
-    ctx.lineTo(300, 50);
-    ctx.setLineDash([5,10])
-    ctx.stroke();
-
-    ctx.beginPath();
+    // ctx.arc(x, y, r, start, end);
+    // ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+    // ctx.arc(100, 100, 50, 0, 300/360* 2 * Math.PI);
+    // ctx.arc(100, 100, 50, 0, Math.PI,);
+    // ctx.arc(100, 100, 50, 0, 300/180 * Math.PI);
     ctx.moveTo(100, 100);
-    ctx.lineTo(300, 100);
-    ctx.setLineDash([])
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(100, 150);
-    ctx.lineTo(300, 150);
-    ctx.lineWidth = 16
-    ctx.lineCap = 'round'
-    ctx.stroke();
-
+    // ctx.arc(100, 100, 50, 0, 300/180 * Math.PI, true);
+    // ctx.arc(100, 100, 50, 0, 300/180 * Math.PI,);
+    ctx.arc(100, 100, 50, 0, 90/180 * Math.PI,);
+    
+    // ctx.stroke();
+    ctx.fill();
   }
 
   draw();
