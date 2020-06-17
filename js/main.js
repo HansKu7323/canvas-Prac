@@ -8,18 +8,21 @@
     }
     const ctx = canvas.getContext('2d');
 
-    // ctx.arc(x, y, r, start, end);
-    // ctx.arc(100, 100, 50, 0, 2 * Math.PI);
-    // ctx.arc(100, 100, 50, 0, 300/360* 2 * Math.PI);
-    // ctx.arc(100, 100, 50, 0, Math.PI,);
-    // ctx.arc(100, 100, 50, 0, 300/180 * Math.PI);
-    ctx.moveTo(100, 100);
-    // ctx.arc(100, 100, 50, 0, 300/180 * Math.PI, true);
-    // ctx.arc(100, 100, 50, 0, 300/180 * Math.PI,);
-    ctx.arc(100, 100, 50, 0, 90/180 * Math.PI,);
-    
-    // ctx.stroke();
-    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(0, 100);
+    ctx.lineTo(canvas.width, 100);
+    ctx.moveTo(100, 0);
+    ctx.lineTo(100, canvas.height);
+    ctx.stroke();
+
+    ctx.font = 'bold 64px Verdane';
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'top';
+
+    // ctx.fillText('Tokyo', 100, 100);
+    // ctx.fillText('Tokyo', 100, 100, 100);
+    ctx.strokeText('Tokyo', 100, 100, 100);
+
   }
 
   draw();
