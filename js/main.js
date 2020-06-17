@@ -8,21 +8,19 @@
     }
     const ctx = canvas.getContext('2d');
 
-    ctx.beginPath();
-    ctx.moveTo(0, 100);
-    ctx.lineTo(canvas.width, 100);
-    ctx.moveTo(100, 0);
-    ctx.lineTo(100, canvas.height);
-    ctx.stroke();
+    const img = document.createElement('img');
+    img.src = 'img/logo.png'
 
-    ctx.font = 'bold 64px Verdane';
-    ctx.textAlign = 'right';
-    ctx.textBaseline = 'top';
-
-    // ctx.fillText('Tokyo', 100, 100);
-    // ctx.fillText('Tokyo', 100, 100, 100);
-    ctx.strokeText('Tokyo', 100, 100, 100);
-
+    img.addEventListener('load', () => {
+      // ctx.drawImage(img, 100, 100);
+      // ctx.drawImage(img, 10, 10, 80, 80);
+      // const pattern = ctx.createPattern(img, 'repeat');
+      // repeat-x, repeat-y, no-repeat
+      const pattern = ctx.createPattern(img, 'repeat-x');
+      ctx.fillStyle = pattern;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    });
+    
   }
 
   draw();
